@@ -1,23 +1,22 @@
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const path = require('path');
+
+const base = require('./webpack.config.base.js')
 
 module.exports = {
+    ...base,
     mode: "development",
-    entry: "./src/index.js", //入口和出口配置
-    output: {
-        path: path.resolve(__dirname, "dist"),
-        // filename: "index.js", // string
-        filename: '[name].[contenthash].js',
-        // filename: 'xxxxxxxxxx.[contenthash].js',
-    },
     devtool: 'inline-source-map',
     devServer: {
         contentBase: './dist',
     },
-    plugins: [new HtmlWebpackPlugin({
-        title: 'webpack.config.js配置里面的title',
-        template: 'src/assets/index.html' //以这个文件为模板生成dist中的Html页面
-    })],
+    plugins: [
+        new HtmlWebpackPlugin({
+            title: 'webpack.config.js配置里面的title',
+            template: 'src/assets/index.html' //以这个文件为模板生成dist中的Html页面
+        })
+    ],
     module: {
         rules: [
             {
