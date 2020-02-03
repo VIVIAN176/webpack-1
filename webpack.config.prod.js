@@ -16,6 +16,7 @@ module.exports = {
     ],
     module: {
         rules: [
+            ...base.module.rules,
             {
                 test: /\.css$/i,
                 //css-loader把css文件读到js里面

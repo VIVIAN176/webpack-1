@@ -1,5 +1,6 @@
-import css from './x.css'
-console.log(css.toString())
-console.log('xxx')
+import './x.scss'
+import './y.less'
+
+
 
 export default 'xxx'
