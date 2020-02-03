@@ -10,6 +10,10 @@ module.exports = {
         filename: '[name].[contenthash].js',
         // filename: 'xxxxxxxxxx.[contenthash].js',
     },
+    devtool: 'inline-source-map',
+    devServer: {
+        contentBase: './dist',
+    },
     plugins: [new HtmlWebpackPlugin({
         title: 'webpack.config.js配置里面的title',
         template: 'src/assets/index.html' //以这个文件为模板生成dist中的Html页面
